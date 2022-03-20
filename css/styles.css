@@ -1,56 +1,77 @@
+:root {
+  --clr-primary: #8A39E1;
+  --clr-secondary: #B667F1;
+  --clr-tertiary: #fff;
+  --clr-text-prm: #000;
+  --clr-text-scn: #8f8f8f;
+  --ff-logo: 'Pacifico', cursive;
+  --ff-text: 'Inter', sans-serif;
+  --fs-title-bg: 3rem;
+  --fs-title-sm: 2.5rem;
+  --fs-text-bg: 1.6rem;
+  --fs-text-sm: 1.125rem;
+}
 
 body {
-  font-family: "Montserrat";
+  font-family: var(--ff-text);
   text-align: center;
 }
 
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--clr-tertiary);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--clr-secondary);
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat-Bold";
+  font-family: var(--ff-text);
+  font-weight: bold;
 }
 
 p {
-  color: #8f8f8f;
+  color: var(--clr-text-scn);
 }
 
 /* Headings */
-
-.big-heading {
-  font-family: "Montserrat-Black";
-  font-size: 3.5rem;
+.big-heading,
+.section-heading {
+  font-size: var(--fs-title-bg);
   line-height: 1.5;
 }
 
-.section-heading {
-  font-size: 3rem;
-  line-height: 1.5;
+.big-heading {
+  font-weight: bold;
 }
 
 /* Containers */
-
-.container-fluid{
+.container-fluid {
   padding: 7% 15%;
 }
 
 /* Sections */
-
 .colored-section {
-  background-color: #8A39E1;
-  color: #fff;
+  background-color: var(--clr-primary);
+  color: var(--clr-tertiary);
 }
 
 .white-section {
-  background-color: #fff;
+  background-color: var(--clr-tertiary);
 }
 
 /* Navigation Bar */
-
 .navbar {
   padding: 0 0 4.5rem;
 }
 
 .navbar-brand {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.5rem;
+  font-family: var(--ff-logo);
+  font-size: var(--fs-title-sm);
   font-weight: bold;
 }
 
@@ -59,21 +80,19 @@ p {
 }
 
 .nav-link {
-  font-size: 1.2rem;
-  font-family: "Montserrat-Light";
+  font-size: var(--fs-text-sm);
+  font-family: var(--ff-text);
 }
 
 /* Buttons */
-
 .download-button {
   margin: 5% 3% 5% 0;
 }
 
 /* Title Section */
-
 #title {
-  background-color: #8A39E1;
-  color: #fff;
+  background-color: var(--clr-primary);
+  color: var(--clr-tertiary);
   text-align: left;
 }
 
@@ -81,80 +100,58 @@ p {
   padding: 3% 15% 7%;
 }
 
-/* Title Image */
-
 .title-image {
-  width: 100%;
-  height: 100%;
+  max-width: 80%;
   position: absolute;
-  bottom: 0;S
+  bottom: 0;
 }
 
 /* Features Section */
-
 #features {
   position: relative;
 }
 
 .feature-title {
-  font-size: 1.5rem;
+  font-size: var(--fs-text-bg);
 }
 
 .feature-box {
   padding: 4.5%;
 }
 
-.icon {
-  color: #ef8172;
-  margin-bottom: 1rem;
-}
-
-.icon:hover {
-  color: #ff4c68;
+.icon-img {
+  width: 60%;
+  margin: 10px 10px 50px;
 }
 
 /* Testimonial Section */
-
 #testimonials {
-  background-color: #B667F1;
+  background-color: var(--clr-secondary);
 }
 
 .testimonial-text {
-  font-size: 3rem;
+  font-size: var(--fs-title-bg);
   line-height: 1.5;
 }
 
-.testimonial-image {
-  width: 10%;
-  border-radius: 100%;
-  margin: 20px;
-}
-
-
 #press {
-  background-color: #B667F1;
+  background-color: var(--clr-secondary);
   padding-bottom: 3%;
 }
 
 .press-logo {
   width: 15%;
-  margin: 20px 20px 50px;
+  margin: 2vw 2vw 3vw;
 }
 
-/* topics Section */
-
+/* Topics Section */
 #topics {
-  padding: 100px;
-}
-
-.icon-img {
-  width: 40%;
-  margin: 10px 10px 50px;
+  padding: 7% 10%;
 }
 
 .choose-img {
-  width: 30%;
-  margin: 20px 20px 50px;
+  width: 60%;
+  margin: 2vw 2vw 3vw;
 }
 
 .topics-column {
@@ -162,7 +159,6 @@ p {
 }
 
 /* CTA Section */
-
 /* Attibution Section */
 .attribution {
   text-decoration: none;
@@ -171,20 +167,46 @@ p {
 }
 
 /* Footer Section */
-
-
 .social-icon {
   margin: 20px 10px;
+  cursor: pointer;
 }
 
-@media (max-width: 1028px) {
-
+@media (max-width: 1175px) {
   #title {
     text-align: center;
   }
 
   .title-image {
     position: static;
-    transform: rotate(0);
+  }
+}
+
+@media (max-width: 950px) {
+  .container-fluid{
+    padding: 7%;
+  }
+
+  #title .container-fluid {
+    padding: 3% 7% 7%;
+  }
+
+  .big-heading,
+  .section-heading {
+    font-size: var(--fs-title-sm);
+  }
+
+  .navbar-brand,
+  .testimonial-text {
+    font-size: var(--fs-text-bg);
+  }
+
+  .feature-title {
+    font-size: var(--fs-text-sm);
+  }
+
+  .icon-img,
+  .choose-img {
+    width: 40%;
   }
 }
